@@ -1,5 +1,5 @@
 <script setup>
-import useLocalization from '@/composables/useLocalization'
+import useLocalization from '../composables/useLocalization'
 
 const { getTranslationRef,ready} = useLocalization()
 const headerText = getTranslationRef('brandPageTitle')

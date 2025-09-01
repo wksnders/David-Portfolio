@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import useLocalization from '@/composables/useLocalization'
+import useLocalization from '../composables/useLocalization.js'
 
 const { getTranslationRef,ready} = useLocalization()
 const headerText = getTranslationRef('brandPageTitle')
