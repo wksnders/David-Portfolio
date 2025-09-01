@@ -27,8 +27,8 @@
 	--color-border-accent-hover: var(--divider-light-1);
 
 	--color-heading: var(--green-blue);
-	--color-text: var(--tan);
-	--color-hyperlink: var(--green-blue);
+	--color-text: var(--green-blue);
+	--color-hyperlink: var(--tan);
   --color-text-accent:var(--green-blue);
   --color-text-accent-active:var(--green-blue);
 }

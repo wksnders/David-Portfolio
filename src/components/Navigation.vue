@@ -12,19 +12,16 @@ const navContact = getTranslationRef('navigation.contact')
 </script>
 
 <template>
-  <nav>
-    <template v-if="ready">
+    <nav v-if="ready">
       <RouterLink to="/">{{ navAbout }}</RouterLink>
       <RouterLink to="/#writing">{{ navWriting }}</RouterLink>
       <RouterLink to="/#teaching">{{ navTeaching }}</RouterLink>
       <RouterLink to="/#editing">{{ navEditing }}</RouterLink>
       <RouterLink to="/contact-me">{{ navContact }}</RouterLink>
-    </template>
-
-    <template v-else>
-      Loading ...
-    </template>
-  </nav>
+    </nav>
+    <nav v-else>
+        Loading ...
+    </nav>
 </template>
 
 <style scoped>
@@ -46,6 +43,7 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
+	color: var(--color-text-accent);
 	display: inline-block;
 	padding: 0 .3rem;
 	border-left: 1px solid var(--color-text-accent);
