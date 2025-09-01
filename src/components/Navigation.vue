@@ -2,18 +2,29 @@
 import { RouterLink } from 'vue-router';
 import useLocalization from '../composables/useLocalization.js'
 
-const { getTranslationRef,ready} = useLocalization()
-const headerText = getTranslationRef('brandPageTitle')
+const { getTranslationRef, ready } = useLocalization()
+
+const navAbout = getTranslationRef('navigation.about')
+const navWriting = getTranslationRef('navigation.writing')
+const navTeaching = getTranslationRef('navigation.teaching')
+const navEditing = getTranslationRef('navigation.editing')
+const navContact = getTranslationRef('navigation.contact')
 </script>
 
 <template>
-    <nav>
-		<RouterLink to="/">About</RouterLink>
-		<RouterLink to="/#writing">Writing</RouterLink>
-		<RouterLink to="/#teaching">Teaching</RouterLink>
-		<RouterLink to="/#editing">Editing</RouterLink>
-		<RouterLink to="/contact-me">Contact</RouterLink>
-	</nav>
+  <nav>
+    <template v-if="ready">
+      <RouterLink to="/">{{ navAbout }}</RouterLink>
+      <RouterLink to="/#writing">{{ navWriting }}</RouterLink>
+      <RouterLink to="/#teaching">{{ navTeaching }}</RouterLink>
+      <RouterLink to="/#editing">{{ navEditing }}</RouterLink>
+      <RouterLink to="/contact-me">{{ navContact }}</RouterLink>
+    </template>
+
+    <template v-else>
+      Loading ...
+    </template>
+  </nav>
 </template>
 
 <style scoped>
