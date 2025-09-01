@@ -3,6 +3,7 @@ import { defineProps } from 'vue'
 import useLocalization from '../composables/useLocalization.js'
 
 const props = defineProps({
+  id: String,
   templateType: String,
   subsections: Array
 })
@@ -11,7 +12,7 @@ const { getTranslationRef, ready } = useLocalization()
 </script>
 
 <template>
-  <section class="template-section">
+  <section class="template-section" :id="id">
     <h2>{{ templateType }}</h2>
 
     <div

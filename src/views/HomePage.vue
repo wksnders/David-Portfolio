@@ -4,9 +4,9 @@ import TemplateSection from '../components/TemplateSection.vue'
 import About from '../components/About.vue'
 
 const sections = [
-  { templateType: 'writing', subsections: ['Public Relations', 'Books', 'Articles'], },
-  { templateType: 'teaching', subsections: ['Classroom', '1:1'], },
-  { templateType: 'editing', subsections: ['Public Relations', 'Books', 'Speeches', 'Sub-Surtitles'], },
+  { templateType: 'writing',id:'writing', subsections: ['Public Relations', 'Books', 'Articles'], },
+  { templateType: 'teaching',id:'teaching', subsections: ['Classroom', '1:1'], },
+  { templateType: 'editing',id:'editing', subsections: ['Public Relations', 'Books', 'Speeches', 'Sub-Surtitles'], },
 ]
 </script>
 
@@ -18,6 +18,7 @@ const sections = [
       <TemplateSection
         v-for="(section, index) in sections"
         :key="index"
+        :id="section.id"
         :template-type="section.templateType"
         :subsections="section.subsections"
       />
