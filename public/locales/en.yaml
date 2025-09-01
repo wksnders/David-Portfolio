@@ -4,3 +4,18 @@ navigation.writing: "Writing"
 navigation.teaching: "Teaching"
 navigation.editing: "Editing"
 navigation.contact: "Contact"
+AboutMeSectionTitle: "About Me"
+AboutMeSectionBody: "International communications consultant with 20+ years of expertise bridging Korean and Western cultures. Proven track record in strategic communica-tions, government relations, and cross-cultural content development. Native English speaker with deep understanding of Korea’s business norms, environment, and cultural nuances. Specializes in helping Koreans communicate effectively with global audiences and helping international companies establish credible presence in Korea."
+
+
+
+ContactFormPageTitle: "Contact Me"
+ContactFormNameLabel: "Your Name"
+ContactFormEmailLabel: "Your Email"
+ContactFormMessageLabel: "Your Message"
+ContactFormSubmitButton: "Send Message"
+ContactFormSuccessMessage: "Thank you for reaching out! We'll get back to you soon."
+ContactFormErrorMessage: "Something went wrong. Please try again later."
+ContactFormNamePlaceholder: "How Should I address you?"
+ContactFormEmailPlaceholder: "email@example.com"
+ContactFormMessagePlaceholder: "Write your message here"
