@@ -1,7 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import useLocalization from '../composables/useLocalization';
-const headerText = useLocalization("brandPageTitle");
+import useLocalization from '@/composables/useLocalization'
+
+const { getTranslationRef,ready} = useLocalization()
+const headerText = getTranslationRef('brandPageTitle')
 </script>
 
 <template>
