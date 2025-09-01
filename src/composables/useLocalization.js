@@ -7,7 +7,8 @@ let loadingPromise = null
 const ready = ref(false)
 
 function getCurrentLanguage() {
-  const urlLang = new URLSearchParams(window.location.search).get('lang')
+  const search = window.location.search || window.location.hash.split('?')[1] || ''
+  const urlLang = new URLSearchParams(search).get('lang')
   const browserLang = navigator.language.split('-')[0]
   return urlLang || browserLang || fallbackLanguage
 }
