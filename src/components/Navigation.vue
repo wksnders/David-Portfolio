@@ -27,7 +27,7 @@ nav {
     z-index: 1;
 }
 nav a.router-link-exact-active {
-	color: var(--color-background-accent);
+	color: var(--color-text-accent-active);
 }
 
 nav a.router-link-exact-active:hover {
@@ -37,7 +37,7 @@ nav a.router-link-exact-active:hover {
 nav a {
 	display: inline-block;
 	padding: 0 .3rem;
-	border-left: 1px solid var(--color-box-heading);
+	border-left: 1px solid var(--color-text-accent);
 }
 
 nav a:first-of-type {
@@ -51,7 +51,7 @@ nav a:first-of-type {
   }
   nav a {
   	padding: 0 .5rem;
-  	border-left: .1rem solid var(--color-box-heading);
+  	border-left: .1rem solid var(--color-text-accent);
   }
 
 }
