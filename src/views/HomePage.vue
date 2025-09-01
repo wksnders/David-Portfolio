@@ -4,9 +4,9 @@ import TemplateSection from '../components/TemplateSection.vue'
 import About from '../components/About.vue'
 
 const sections = [
-  { templateType: 'writing', },
-  { templateType: 'teaching', },
-  { templateType: 'editing', },
+  { templateType: 'writing', subsections: ['Public Relations', 'Books', 'Articles'], },
+  { templateType: 'teaching', subsections: ['Classroom', '1:1'], },
+  { templateType: 'editing', subsections: ['Public Relations', 'Books', 'Speeches', 'Sub-Surtitles'], },
 ]
 </script>
 
@@ -19,6 +19,7 @@ const sections = [
         v-for="(section, index) in sections"
         :key="index"
         :template-type="section.templateType"
+        :subsections="section.subsections"
       />
     </div>
 
@@ -42,19 +43,18 @@ const sections = [
   }
 
   .main-column {
-    flex: 1; /* takes remaining width */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
   .about-column {
-    width: 300px; /* fixed width for side column */
+    width: 300px;
     flex-shrink: 0;
   }
 }
 
-/* Small screens: about goes below main column automatically */
 @media (max-width: 799px) {
   .main-column,
   .about-column {
