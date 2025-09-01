@@ -1,12 +1,9 @@
 <script setup>
-import useLocalization from '../composables/useLocalization'
-
-const { getTranslationRef,ready} = useLocalization()
-const headerText = getTranslationRef('brandPageTitle')
+import ContactForm from '../components/ContactMe.vue';
 </script>
 
 <template>
-    
+    <ContactForm/>
 </template>
 
 <style scoped>

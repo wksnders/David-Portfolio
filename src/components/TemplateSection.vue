@@ -41,7 +41,6 @@ const { getTranslationRef, ready } = useLocalization()
 
 <style scoped>
 .template-section {
-  border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
   display: flex;
