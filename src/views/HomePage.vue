@@ -35,7 +35,7 @@ const sections = [
     templateType: 'teaching',
     id: 'teaching',
     subsections: [
-      { name: '1:1', itemComponent: OneOnOneItem, },
+      { name: 'OneOnOne', itemComponent: OneOnOneItem, },
       { name: 'Classroom', itemComponent: ClassroomItem, },
     ],
   },

@@ -45,8 +45,23 @@ teaching.Classroom.4.locationText: "POSCO Steel Education Center, Pohang and Gwa
 teaching.Classroom.4.textAfter: "(English instruction for classes of steelworkers)"
 
 
-Subsection.teaching.1:1: "1:1"
-Subsection.teaching.1:1.description: "Work one-on-one with professionals who want to improve their English for an upcoming presentation or exam. Clients have included:"
+Subsection.teaching.OneOnOne: "1:1"
+Subsection.teaching.OneOnOne.description: "Work one-on-one with professionals who want to improve their English for an upcoming presentation or exam. Clients have included:"
+teaching.OneOnOne.1.student: "Executives from POSCO and Ogilvy"
+teaching.OneOnOne.1.testimonialText: ""
+teaching.OneOnOne.1.testimonialLink: ""
+teaching.OneOnOne.2.student: "Officials from Korea’s Ministry of Culture"
+teaching.OneOnOne.2.testimonialText: ""
+teaching.OneOnOne.2.testimonialLink: ""
+teaching.OneOnOne.3.student: "Sports and Tourism"
+teaching.OneOnOne.3.testimonialText: ""
+teaching.OneOnOne.3.testimonialLink: ""
+teaching.OneOnOne.4.student: "A lawyer preparing for a presentation at an international seminar"
+teaching.OneOnOne.4.testimonialText: ""
+teaching.OneOnOne.4.testimonialLink: ""
+teaching.OneOnOne.5.student: "A pharmacist preparing for IELTS"
+teaching.OneOnOne.5.testimonialText: ""
+teaching.OneOnOne.5.testimonialLink: ""
 
 
 ContactFormPageTitle: "Contact Me"
