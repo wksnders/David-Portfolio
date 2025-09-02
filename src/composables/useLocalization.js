@@ -16,7 +16,7 @@ function getCurrentLanguage() {
 async function loadLanguage(lang) {
   if (locales[lang]) return
   try {
-    const res = await fetch(`/locales/${lang}.yaml`)
+    const res = await fetch(`./locales/${lang}.yaml`)
     locales[lang] = yaml.load(await res.text())
   } catch (e) {
     console.error(`Failed to load ${lang}.yaml`, e)
