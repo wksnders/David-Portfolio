@@ -41,23 +41,56 @@ function getTranslationRef(key) {
   const lang = getCurrentLanguage()
   const value = ref('')
 
-  // Update value automatically when ready
   watchEffect(() => {
     if (ready.value) {
-      value.value =
-        locales[lang]?.[key] ||
-        locales[fallbackLanguage]?.[key] ||
-        `INVALID_KEY ${key}`
+      const langVal = locales[lang]?.[key]
+      const fallbackVal = locales[fallbackLanguage]?.[key]
+
+      if (langVal !== undefined) {
+        value.value = langVal
+      } else if (fallbackVal !== undefined) {
+        value.value = fallbackVal
+      } else {
+        value.value = `INVALID_KEY ${key}`
+      }
     }
   })
 
   return value
 }
 
+/**
+ * Returns the number of items that exist under a given prefix.
+ * Example: prefix = "writing.Public Relations." will count
+ * writing.Public Relations.0, writing.Public Relations.1, etc.
+ */
+function prefixEntryCounts(prefix) {
+  const lang = getCurrentLanguage()
+  const keys = Object.keys(locales[lang] || {})
+  const fallbackKeys = Object.keys(locales[fallbackLanguage] || {})
+  const allKeys = new Set([...keys, ...fallbackKeys])
+
+  // Collect indices that match the prefix
+  const indices = [...allKeys]
+    .map(key => {
+      if (key.startsWith(prefix)) {
+        const rest = key.slice(prefix.length)
+        const firstPart = rest.split('.')[0]
+        const idx = parseInt(firstPart, 10)
+        return isNaN(idx) ? -1 : idx
+      }
+      return -1
+    })
+    .filter(i => i >= 0)
+
+  return indices.length ? Math.max(...indices)  : 0
+}
+
 export default function useLocalization() {
   return {
-    ready,               
-    preloadLanguages,    
-    getTranslationRef       
+    ready,
+    preloadLanguages,
+    getTranslationRef,
+    prefixEntryCounts
   }
 }

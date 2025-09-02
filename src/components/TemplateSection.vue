@@ -8,7 +8,7 @@ const props = defineProps({
   subsections: Array, // objects with { name, itemComponent }
 })
 
-const { getTranslationRef, ready } = useLocalization()
+const { prefixEntryCounts,getTranslationRef, ready } = useLocalization()
 
 // Localized section title
 const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
@@ -33,12 +33,12 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
 
         <div class="entries">
           <!-- Render entries from localization -->
-          <component
-            v-for="(entry, i) in getTranslationRef(`${props.templateType}.${subsection.name}`)"
-            :key="i"
-            :is="subsection.itemComponent"
-            :entry="entry"
-          />
+            <component
+              v-for="i in prefixEntryCounts(`${props.templateType}.${subsection.name}.`)"
+              :key="i"
+              :is="subsection.itemComponent"
+              :base-path="`${props.templateType}.${subsection.name}.${i}`"
+            />
         </div>
       </template>
     </div>
