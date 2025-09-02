@@ -5,37 +5,42 @@ import useLocalization from '../composables/useLocalization.js'
 const props = defineProps({
   id: String,
   templateType: String,
-  subsections: Array
+  subsections: Array, // objects with { name, itemComponent }
 })
 
 const { getTranslationRef, ready } = useLocalization()
+
+// Localized section title
+const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
 </script>
 
 <template>
   <section class="template-section" :id="id">
-    <h2>{{ templateType }}</h2>
+    <!-- Section title -->
+    <div v-if="!ready">Loading...</div>
+    <h2 v-else>{{ sectionTitle }}</h2>
 
+    <!-- Subsections -->
     <div
       v-for="(subsection, index) in subsections"
       :key="index"
       class="subsection"
     >
-      <h3>{{ subsection.name }}</h3>
+      <div v-if="!ready">Loading...</div>
+      <template v-else>
+        <!-- Localized subsection title -->
+        <h3>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h3>
 
-      <div class="entries">
-        <!-- Loading state -->
-        <div v-if="!ready">Loading...</div>
-
-        <!-- Entries from localization -->
-        <template v-else>
+        <div class="entries">
+          <!-- Render entries from localization -->
           <component
-            v-for="(entry, i) in getTranslationRef(`${templateType}.${subsection.name}`)"
+            v-for="(entry, i) in getTranslationRef(`${props.templateType}.${subsection.name}`)"
             :key="i"
             :is="subsection.itemComponent"
             :entry="entry"
           />
-        </template>
-      </div>
+        </div>
+      </template>
     </div>
   </section>
 </template>

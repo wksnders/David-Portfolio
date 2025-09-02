@@ -1,11 +1,28 @@
 PortfolioHeaderTitle: "David Kendall"
+
 navigation.about: "About"
 navigation.writing: "Writing"
 navigation.teaching: "Teaching"
 navigation.editing: "Editing"
 navigation.contact: "Contact"
+
 AboutMeSectionTitle: "About Me"
 AboutMeSectionBody: "International communications consultant with 20+ years of expertise bridging Korean and Western cultures. Proven track record in strategic communica-tions, government relations, and cross-cultural content development. Native English speaker with deep understanding of Korea’s business norms, environment, and cultural nuances. Specializes in helping Koreans communicate effectively with global audiences and helping international companies establish credible presence in Korea."
+
+Section.writing: "Writing"
+Subsection.writing.Public Relations: "Public Relations"
+Subsection.writing.Books: "Books"
+Subsection.writing.Articles: "Articles"
+
+Section.teaching: "Teaching"
+Subsection.teaching.Classroom: "Classroom"
+Subsection.teaching.1:1: "1:1"
+
+Section.editing: "Editing"
+Subsection.editing.Public Relations: "Public Relations"
+Subsection.editing.Books: "Books"
+Subsection.editing.Speeches: "Speeches"
+Subsection.editing.Sub-Surtitles: "Sub-Surtitles"
 
 
 

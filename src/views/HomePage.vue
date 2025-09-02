@@ -3,10 +3,42 @@ import IntroductionImages from '../components/IntroductionImages.vue'
 import TemplateSection from '../components/TemplateSection.vue'
 import About from '../components/About.vue'
 
+import ArticlesItem from '../components/templates/ArticlesItem.vue'
+import BooksItem from '../components/templates/BooksItem.vue'
+import ClassroomItem from '../components/templates/ClassroomItem.vue'
+import OneOnOneItem from '../components/templates/OneOnOneItem.vue'
+import PublicRelationsItem from '../components/templates/PublicRelationsItem.vue'
+import SpeechesItem from '../components/templates/SpeechesItem.vue'
+import SubSurtitlesItem from '../components/templates/SubSurtitlesItem.vue'
+
 const sections = [
-  { templateType: 'writing',id:'writing', subsections: ['Public Relations', 'Books', 'Articles'], },
-  { templateType: 'teaching',id:'teaching', subsections: ['Classroom', '1:1'], },
-  { templateType: 'editing',id:'editing', subsections: ['Public Relations', 'Books', 'Speeches', 'Sub-Surtitles'], },
+  {
+    templateType: 'writing',
+    id: 'writing',
+    subsections: [
+      { name: 'Public Relations', itemComponent: PublicRelationsItem, },
+      { name: 'Books', itemComponent: BooksItem, },
+      { name: 'Articles', itemComponent: ArticlesItem, },
+    ],
+  },
+  {
+    templateType: 'teaching',
+    id: 'teaching',
+    subsections: [
+      { name: 'Classroom', itemComponent: ClassroomItem, },
+      { name: '1:1', itemComponent: OneOnOneItem, },
+    ],
+  },
+  {
+    templateType: 'editing',
+    id: 'editing',
+    subsections: [
+      { name: 'Public Relations', itemComponent: PublicRelationsItem, },
+      { name: 'Books', itemComponent: BooksItem, },
+      { name: 'Speeches', itemComponent: SpeechesItem, },
+      { name: 'Sub-Surtitles', itemComponent: SubSurtitlesItem, },
+    ],
+  },
 ]
 </script>
 
