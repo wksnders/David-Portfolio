@@ -22,14 +22,6 @@ const sections = [
     ],
   },
   {
-    templateType: 'teaching',
-    id: 'teaching',
-    subsections: [
-      { name: 'Classroom', itemComponent: ClassroomItem, },
-      { name: '1:1', itemComponent: OneOnOneItem, },
-    ],
-  },
-  {
     templateType: 'editing',
     id: 'editing',
     subsections: [
@@ -37,6 +29,14 @@ const sections = [
       { name: 'Books', itemComponent: BooksItem, },
       { name: 'Speeches', itemComponent: SpeechesItem, },
       { name: 'Sub-Surtitles', itemComponent: SubSurtitlesItem, },
+    ],
+  },
+  {
+    templateType: 'teaching',
+    id: 'teaching',
+    subsections: [
+      { name: '1:1', itemComponent: OneOnOneItem, },
+      { name: 'Classroom', itemComponent: ClassroomItem, },
     ],
   },
 ]

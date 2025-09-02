@@ -29,7 +29,7 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
       <div v-if="!ready">Loading...</div>
       <template v-else>
         <!-- Localized subsection title -->
-        <h3>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h3>
+        <h4>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h4>
 
         <div class="entries">
           <!-- Render entries from localization -->
@@ -54,8 +54,9 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
   gap: 1rem;
 }
 
-.subsection h3 {
+.subsection h4 {
   margin-bottom: 0.5rem;
+  color: var(--color-soft-heading);
 }
 
 .entries {

@@ -10,7 +10,7 @@ const { getTranslationRef, ready } = useLocalization()
 
 // Pulling localized fields
 const locationLink = getTranslationRef(`${props.basePath}.locationLink`)
-const locationText = getTranslationRef(`${props.basePath}.locationLinkText`)
+const locationText = getTranslationRef(`${props.basePath}.locationText`)
 const textAfter = getTranslationRef(`${props.basePath}.textAfter`)
 </script>
 
