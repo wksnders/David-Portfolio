@@ -8,7 +8,7 @@ const props = defineProps({
   subsections: Array, // objects with { name, itemComponent }
 })
 
-const { prefixEntryCounts,getTranslationRef, ready } = useLocalization()
+const { prefixEntryCounts, getTranslationRef, ready } = useLocalization()
 
 // Localized section title
 const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
@@ -28,17 +28,19 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
     >
       <div v-if="!ready">Loading...</div>
       <template v-else>
-        <!-- Localized subsection title -->
         <h4>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h4>
 
+        <p v-if="getTranslationRef(`Subsection.${props.templateType}.${subsection.name}.description`)">
+          {{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}.description`) }}
+        </p>
+
         <div class="entries">
-          <!-- Render entries from localization -->
-            <component
-              v-for="i in prefixEntryCounts(`${props.templateType}.${subsection.name}.`)"
-              :key="i"
-              :is="subsection.itemComponent"
-              :base-path="`${props.templateType}.${subsection.name}.${i}`"
-            />
+          <component
+            v-for="i in prefixEntryCounts(`${props.templateType}.${subsection.name}.`) "
+            :key="i"
+            :is="subsection.itemComponent"
+            :base-path="`${props.templateType}.${subsection.name}.${i}`"
+          />
         </div>
       </template>
     </div>
@@ -55,8 +57,13 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
 }
 
 .subsection h4 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: var(--color-soft-heading);
+}
+
+.subsection p {
+  margin: 0 0 0.75rem 0;
+  color: var(--color-text);
 }
 
 .entries {

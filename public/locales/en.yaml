@@ -10,12 +10,27 @@ AboutMeSectionTitle: "About Me"
 AboutMeSectionBody: "International communications consultant with 20+ years of expertise bridging Korean and Western cultures. Proven track record in strategic communica-tions, government relations, and cross-cultural content development. Native English speaker with deep understanding of Korea’s business norms, environment, and cultural nuances. Specializes in helping Koreans communicate effectively with global audiences and helping international companies establish credible presence in Korea."
 
 Section.writing: "Writing"
-Subsection.writing.Public Relations: "Public Relations"
+Subsection.writing.PublicRelations: "Public Relations"
+Subsection.writing.PublicRelations.description: ""
+
 Subsection.writing.Books: "Books"
+Subsection.writing.Books.description: ""
 Subsection.writing.Articles: "Articles"
+Subsection.writing.Articles.description: ""
+
+Section.editing: "Editing"
+Subsection.editing.PublicRelations: "Public Relations"
+Subsection.editing.PublicRelations.description: ""
+Subsection.editing.Books: "Books"
+Subsection.editing.Books.description: ""
+Subsection.editing.Speeches: "Speeches"
+Subsection.editing.Speeches.description: ""
+Subsection.editing.Sub-Surtitles: "Sub-Surtitles"
+Subsection.editing.Sub-Surtitles.description: ""
 
 Section.teaching: "Teaching"
 Subsection.teaching.Classroom: "Classroom"
+Subsection.teaching.Classroom.description: ""
 teaching.Classroom.1.locationLink: ""
 teaching.Classroom.1.locationText: "Indiana University"
 teaching.Classroom.1.textAfter: "(Korean History TA)"
@@ -31,13 +46,7 @@ teaching.Classroom.4.textAfter: "(English instruction for classes of steelworker
 
 
 Subsection.teaching.1:1: "1:1"
-
-Section.editing: "Editing"
-Subsection.editing.Public Relations: "Public Relations"
-Subsection.editing.Books: "Books"
-Subsection.editing.Speeches: "Speeches"
-Subsection.editing.Sub-Surtitles: "Sub-Surtitles"
-
+Subsection.teaching.1:1.description: "Work one-on-one with professionals who want to improve their English for an upcoming presentation or exam. Clients have included:"
 
 
 ContactFormPageTitle: "Contact Me"

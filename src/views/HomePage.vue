@@ -16,7 +16,7 @@ const sections = [
     templateType: 'writing',
     id: 'writing',
     subsections: [
-      { name: 'Public Relations', itemComponent: PublicRelationsItem, },
+      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
       { name: 'Books', itemComponent: BooksItem, },
       { name: 'Articles', itemComponent: ArticlesItem, },
     ],
@@ -25,7 +25,7 @@ const sections = [
     templateType: 'editing',
     id: 'editing',
     subsections: [
-      { name: 'Public Relations', itemComponent: PublicRelationsItem, },
+      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
       { name: 'Books', itemComponent: BooksItem, },
       { name: 'Speeches', itemComponent: SpeechesItem, },
       { name: 'Sub-Surtitles', itemComponent: SubSurtitlesItem, },
