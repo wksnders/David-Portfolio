@@ -42,9 +42,9 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
       </p>
 
       <p v-if="testimonialLink" class="testimonial">
-        <a :href="testimonialLink" target="_blank" rel="noopener noreferrer">
+        <RouterLink :to="testimonialLink">
           {{ testimonialLabel || 'Testimonials' }}
-        </a>
+        </RouterLink>
       </p>
     </div>
   </div>

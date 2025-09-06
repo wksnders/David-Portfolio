@@ -21,7 +21,7 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
       {{ student }}
       <span v-if="testimonialText"> — "{{ testimonialText }}"</span>
       <template v-if="testimonialLink">
-        &nbsp;<a :href="testimonialLink" target="_blank" rel="noopener noreferrer">(link)</a>
+        &nbsp;<RouterLink :to="testimonialLink">(link)</RouterLink>
       </template>
     </p>
   </div>

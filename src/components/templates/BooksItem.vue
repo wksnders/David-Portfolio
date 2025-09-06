@@ -38,9 +38,9 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
 
       <!-- Testimonial link -->
       <p v-if="testimonialLink" class="book-testimonial">
-        <a :href="testimonialLink" target="_blank" rel="noopener noreferrer">
+        <RouterLink :to="testimonialLink">
           {{ testimonialLabel || 'Testimonials' }}
-        </a>
+        </RouterLink>
       </p>
 
       <!-- Subtext (small notes) -->

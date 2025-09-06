@@ -7,7 +7,7 @@ const bodyText = getTranslationRef('AboutMeSectionBody')
 </script>
 
 <template>
-  <section class="about-me">
+  <section class="about-me" id="about">
     <h1>{{ headerText }}</h1>
     <p>{{ bodyText }}</p>
   </section>

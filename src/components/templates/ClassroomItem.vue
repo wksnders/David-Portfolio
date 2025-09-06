@@ -20,7 +20,7 @@ const textAfter = getTranslationRef(`${props.basePath}.textAfter`)
     <p v-else>
       <!-- Render location as link if present -->
       <template v-if="locationLink">
-        <a :href="locationLink" target="_blank" rel="noopener noreferrer">{{ locationText }}</a>
+        <RouterLink :to="locationLink">{{ locationText }}</RouterLink>
       </template>
       <template v-else>
         {{ locationText }}
