@@ -53,7 +53,7 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0.5rem;
 }
 
 .subsection h4 {

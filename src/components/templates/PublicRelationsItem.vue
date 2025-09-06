@@ -52,7 +52,7 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
 
 <style scoped>
 .pr-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pr-item .location {
