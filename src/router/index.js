@@ -14,6 +14,11 @@ const router = createRouter({
 			name: 'Contact',
 			component: () => import('../views/ContactPage.vue'),
         },
+		{
+    		path: '/testimonials',
+    		name: 'Testimonials',
+    		component: () => import('../views/TestimonialsPage.vue'),
+  		},
 	],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
