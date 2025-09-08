@@ -12,19 +12,21 @@ const testimonialCount = prefixEntryCounts('testimonials.')
 </script>
 
 <template>
-  <section class="testimonials-section">
-    <div v-if="!ready">Loading...</div>
-    <h2 v-else>{{ sectionTitle }}</h2>
+  <main class="main-content">
+    <section class="testimonials-section">
+        <div v-if="!ready">Loading...</div>
+            <h2 v-else>{{ sectionTitle }}</h2>
 
-    <div class="entries">
-      <TestimonialItem
-        v-for="i in testimonialCount"
-        :key="i"
-        :base-path="`testimonials.${i}`"
-        :id="`testimonial-${i}`"
-      />
-    </div>
-  </section>
+            <div class="entries">
+              <TestimonialItem
+                v-for="i in testimonialCount"
+                :key="i"
+                :base-path="`testimonials.${i}`"
+                :id="`testimonial-${i}`"
+            />
+        </div>
+    </section>
+  </main>
 </template>
 
 <style scoped>
