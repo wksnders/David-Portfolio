@@ -15,8 +15,8 @@ const navContact = getTranslationRef('navigation.contact')
     <nav v-if="ready">
       <RouterLink to="/#about">{{ navAbout }}</RouterLink>
       <RouterLink to="/#writing">{{ navWriting }}</RouterLink>
-      <RouterLink to="/#teaching">{{ navTeaching }}</RouterLink>
       <RouterLink to="/#editing">{{ navEditing }}</RouterLink>
+      <RouterLink to="/#teaching">{{ navTeaching }}</RouterLink>
       <RouterLink to="/contact-me">{{ navContact }}</RouterLink>
     </nav>
     <nav v-else>
@@ -27,9 +27,9 @@ const navContact = getTranslationRef('navigation.contact')
 <style scoped>
 nav {
     vertical-align:middle;
-	width: 100%;
+	  width: 100%;
     height: 100%;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     margin-top: 1rem;
     z-index: 1;
@@ -56,7 +56,7 @@ nav a:first-of-type {
 
 @media (min-width: 600px) {
   nav {
-	  font-size: 16px;
+	  font-size: 14px;
   }
   nav a {
   	padding: 0 .5rem;
@@ -70,7 +70,7 @@ nav a:first-of-type {
     margin: 0 10% 1rem 10%;
   }
   nav {
-	  font-size: 20px;
+	  font-size: 18px;
     min-height: 65px;
     margin-top: 2rem;
   }
@@ -83,13 +83,13 @@ nav a:first-of-type {
 @media (min-width: 1000px) {
   nav {
 	  margin-top: 1.5rem;
-	  font-size: 26px;
+	  font-size: 24px;
   }
 }
 @media (min-width: 1200px) {
   nav {
 	  margin-top: 1rem;
-	  font-size: 30px;
+	  font-size: 28px;
   }
 }
 </style>
