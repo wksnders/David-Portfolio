@@ -58,7 +58,7 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   line-height: 16px;
-  font-size: 14px;
+  font-size: 13px;
   font-family:
 	  'Segoe UI',
 	  Roboto,
@@ -132,21 +132,21 @@ article{
 }
 @media (min-width: 800px) {
   body{
-	  font-size: 16px;
+	  font-size: 15px;
 	  line-height: 19px;
   }
 }
 
 @media (min-width: 1000px) {
   body{
-	  font-size: 18px;
+	  font-size: 17px;
 	  line-height: 26px;
   }
 }
 
 @media (min-width: 1200px) {
   body{
-	  font-size: 20px;
+	  font-size: 19px;
 	  line-height: 32px;
   }
 }

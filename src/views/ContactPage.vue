@@ -10,7 +10,6 @@ import About from '../components/About.vue'
     </div>
 
     <aside class="about-column">
-      <About />
     </aside>
   </main>
 </template>
