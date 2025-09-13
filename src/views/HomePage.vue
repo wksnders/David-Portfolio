@@ -69,7 +69,7 @@ const sections = [
   gap: 2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .main-content {
     flex-direction: row;
     align-items: flex-start;

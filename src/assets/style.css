@@ -75,6 +75,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main-content{
+  padding: 0 1rem;
+}
+
 main{
 	width: 100%;
 	min-height: 60dvh;
@@ -135,6 +139,9 @@ article{
 	  font-size: 15px;
 	  line-height: 19px;
   }
+  .main-content{
+    padding: 0 7%;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -148,6 +155,9 @@ article{
   body{
 	  font-size: 19px;
 	  line-height: 32px;
+  }
+  .main-content{
+    padding: 0 10%;
   }
 }
 
