@@ -1,6 +1,7 @@
 <script setup>
 import ContactForm from '../components/ContactForm.vue';
 import About from '../components/About.vue'
+
 </script>
 
 <template>
@@ -8,9 +9,9 @@ import About from '../components/About.vue'
     <div class="main-column">
         <ContactForm/>
     </div>
-
+<!--
     <aside class="about-column">
-    </aside>
+    </aside>-->
   </main>
 </template>
 

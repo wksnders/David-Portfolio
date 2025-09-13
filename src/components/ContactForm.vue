@@ -6,6 +6,7 @@ const { getTranslationRef, ready } = useLocalization()
 const headerText = getTranslationRef('ContactFormPageTitle')
 const nameLabel = getTranslationRef('ContactFormNameLabel')
 const emailLabel = getTranslationRef('ContactFormEmailLabel')
+const subjectLabel = getTranslationRef('ContactFormSubjectLabel')
 const messageLabel = getTranslationRef('ContactFormMessageLabel')
 const submitLabel = getTranslationRef('ContactFormSubmitButton')
 const successMessage = getTranslationRef('ContactFormSuccessMessage')
@@ -13,6 +14,7 @@ const errorMessage = getTranslationRef('ContactFormErrorMessage')
 
 const namePlaceholder = getTranslationRef('ContactFormNamePlaceholder')
 const emailPlaceholder = getTranslationRef('ContactFormEmailPlaceholder')
+const subjectPlaceholder = getTranslationRef('ContactFormSubjectPlaceholder')
 const messagePlaceholder = getTranslationRef('ContactFormMessagePlaceholder')
 
 function handleSubmit() {
@@ -23,15 +25,22 @@ function handleSubmit() {
 <template>
   <section v-if="ready" class="contact-form">
     <h1>{{ headerText }}</h1>
-    <form @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit"
+    action="https://formsubmit.co/your@email.com"
+    >
       <div class="form-group">
         <label for="name">{{ nameLabel }}</label>
-        <input id="name" type="text" :placeholder="namePlaceholder" required />
+        <input id="name" type="text" name="name" :placeholder="namePlaceholder" required />
       </div>
 
       <div class="form-group">
         <label for="email">{{ emailLabel }}</label>
-        <input id="email" type="email" :placeholder="emailPlaceholder" required />
+        <input id="email" name="email" type="email" :placeholder="emailPlaceholder" required />
+      </div>
+
+      <div class="form-group">
+        <label for="subject">{{ subjectLabel }}</label>
+        <input id="subject" name="_subject" type="text" :placeholder="subjectPlaceholder" required />
       </div>
 
       <div class="form-group">
@@ -40,9 +49,12 @@ function handleSubmit() {
           id="message"
           rows="5"
           :placeholder="messagePlaceholder"
+          name="message"
           required
         ></textarea>
       </div>
+
+      <input type="text" name="_honey" style="display:none">
 
       <button type="submit">{{ submitLabel }}</button>
     </form>
