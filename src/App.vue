@@ -3,12 +3,14 @@ import { RouterView } from 'vue-router';
 import myHeader from './components/Header.vue';
 import myFooter from './components/Footer.vue';
 import Navigation from './components/Navigation.vue';
+import LanguageSelect from './components/LanguageSelect.vue';
 </script>
 
 <template>
 	<header>
 		<Navigation/>
-    <myHeader></myHeader>
+    	<myHeader></myHeader>
+		<LanguageSelect/>
 	</header>
 
 	<RouterView />

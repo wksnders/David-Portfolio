@@ -6,10 +6,18 @@ const locales = reactive({})
 let loadingPromise = null
 const ready = ref(false)
 
+// 🔹 Add a manual override
+const manualLang = ref(null)
+
 function getCurrentLanguage() {
+  if (manualLang.value) {
+    return manualLang.value
+  }
+
   const search = window.location.search || window.location.hash.split('?')[1] || ''
   const urlLang = new URLSearchParams(search).get('lang')
   const browserLang = navigator.language.split('-')[0]
+
   return urlLang || browserLang || fallbackLanguage
 }
 
@@ -38,11 +46,11 @@ async function preloadLanguages() {
 }
 
 function getTranslationRef(key) {
-  const lang = getCurrentLanguage()
   const value = ref('')
 
   watchEffect(() => {
     if (ready.value) {
+      const lang = getCurrentLanguage()
       const langVal = locales[lang]?.[key]
       const fallbackVal = locales[fallbackLanguage]?.[key]
 
@@ -59,18 +67,12 @@ function getTranslationRef(key) {
   return value
 }
 
-/**
- * Returns the number of items that exist under a given prefix.
- * Example: prefix = "writing.Public Relations." will count
- * writing.Public Relations.0, writing.Public Relations.1, etc.
- */
 function prefixEntryCounts(prefix) {
   const lang = getCurrentLanguage()
   const keys = Object.keys(locales[lang] || {})
   const fallbackKeys = Object.keys(locales[fallbackLanguage] || {})
   const allKeys = new Set([...keys, ...fallbackKeys])
 
-  // Collect indices that match the prefix
   const indices = [...allKeys]
     .map(key => {
       if (key.startsWith(prefix)) {
@@ -83,7 +85,16 @@ function prefixEntryCounts(prefix) {
     })
     .filter(i => i >= 0)
 
-  return indices.length ? Math.max(...indices)  : 0
+  return indices.length ? Math.max(...indices) : 0
+}
+
+// 🔹 New API to override/reset language manually
+function setManualLanguage(lang) {
+  manualLang.value = lang
+  // Force reload if necessary
+  return loadLanguage(lang).then(() => {
+    ready.value = true
+  })
 }
 
 export default function useLocalization() {
@@ -91,6 +102,8 @@ export default function useLocalization() {
     ready,
     preloadLanguages,
     getTranslationRef,
-    prefixEntryCounts
+    prefixEntryCounts,
+    setManualLanguage,
+    manualLang     
   }
 }
