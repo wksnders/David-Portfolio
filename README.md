@@ -35,7 +35,7 @@ ContactFormSuccessMessage: "Your message has been sent successfully!"
 ContactFormErrorMessage: "Something went wrong. Please try again."
 ContactFormSendingMessage: "Sending..."
 ```
-The keys in green are not translated in a given translation file. only the text within the "quotation marks" noted in blue above is what changes when localizing to a new area. For example:
+The keys on the left are not translated in a given translation file. Only the text within the "quotation marks" on the right and denoted with a seperate color from each key above is what changes when localizing to a new language. For example:
 
 ```yaml
 ContactFormPageTitle: "문의하기"
