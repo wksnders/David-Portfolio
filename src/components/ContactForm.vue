@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import useLocalization from '../composables/useLocalization'
 
 const { getTranslationRef, ready } = useLocalization()
@@ -11,23 +12,76 @@ const messageLabel = getTranslationRef('ContactFormMessageLabel')
 const submitLabel = getTranslationRef('ContactFormSubmitButton')
 const successMessage = getTranslationRef('ContactFormSuccessMessage')
 const errorMessage = getTranslationRef('ContactFormErrorMessage')
+const sendingMessage = getTranslationRef('ContactFormSendingMessage')
 
 const namePlaceholder = getTranslationRef('ContactFormNamePlaceholder')
 const emailPlaceholder = getTranslationRef('ContactFormEmailPlaceholder')
 const subjectPlaceholder = getTranslationRef('ContactFormSubjectPlaceholder')
 const messagePlaceholder = getTranslationRef('ContactFormMessagePlaceholder')
 
-function handleSubmit() {
-  alert('Form submitted (demo only, no backend).')
+// UI state
+const formStatus = ref(null) // 'success' | 'error' | null
+const statusText = ref('')
+const isLoading = ref(false)
+
+const AJAX_ENDPOINT = 'https://formsubmit.co/ajax/a376f112288c4a0db1956198e8b8344a'
+
+async function handleSubmit(e) {
+  e.preventDefault()
+  const form = e.target
+  const formData = new FormData(form)
+
+  const urlEncoded = new URLSearchParams()
+  for (const [key, value] of formData.entries()) {
+    urlEncoded.append(key, value)
+  }
+
+  isLoading.value = true
+  formStatus.value = null
+  statusText.value = ''
+
+  try {
+    const res = await fetch(AJAX_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      body: urlEncoded.toString()
+    })
+
+    const data = await res.json().catch(() => null)
+
+    if (res.ok && data?.success === "true") {
+      form.reset()
+      formStatus.value = 'success'
+      statusText.value = successMessage.value
+    } else {
+      formStatus.value = 'error'
+      statusText.value = errorMessage.value
+    }
+  } catch (err) {
+    console.error(err)
+    formStatus.value = 'error'
+    statusText.value = errorMessage.value
+  } finally {
+    isLoading.value = false
+    // auto-hide after 5 seconds
+    if (formStatus.value) {
+      setTimeout(() => {
+        formStatus.value = null
+        statusText.value = ''
+      }, 5000)
+    }
+  }
 }
 </script>
 
 <template>
   <section v-if="ready" class="contact-form">
     <h1>{{ headerText }}</h1>
-    <form @submit.prevent="handleSubmit"
-    action="https://formsubmit.co/your@email.com"
-    >
+
+    <form @submit.prevent="handleSubmit">
       <div class="form-group">
         <label for="name">{{ nameLabel }}</label>
         <input id="name" type="text" name="name" :placeholder="namePlaceholder" required />
@@ -54,10 +108,15 @@ function handleSubmit() {
         ></textarea>
       </div>
 
-      <input type="text" name="_honey" style="display:none">
+      <input type="text" name="_honey" style="display:none" />
 
-      <button type="submit">{{ submitLabel }}</button>
+      <button type="submit" :disabled="isLoading">
+        {{ isLoading ? sendingMessage : submitLabel }}
+      </button>
     </form>
+
+    <p v-if="formStatus === 'success'" style="color: green">{{ statusText }}</p>
+    <p v-if="formStatus === 'error'" style="color: red">{{ statusText }}</p>
   </section>
 </template>
 
