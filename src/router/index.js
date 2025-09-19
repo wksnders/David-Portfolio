@@ -19,15 +19,20 @@ const router = createRouter({
     		name: 'Testimonials',
     		component: () => import('../views/TestimonialsPage.vue'),
   		},
+		{
+			path: '/contact-thanks',
+			name: 'Contact',
+			component: () => import('../views/ContactPage.vue'),
+        },
 	],
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
-    }
-  },
+  	scrollBehavior(to, from, savedPosition) {
+  	  	if (to.hash) {
+  	  	  	return {
+  	  	   		el: to.hash,
+  	  	    	behavior: 'smooth',
+  	  	  	}
+  	  	}
+  	},
 });
 
 export default router;
