@@ -51,4 +51,13 @@ watch(selectedLang, (newLang) => {
   border: 1px solid var(--color-border);
   background: var(--color-background);
 }
+
+@media (min-width: 800px) {
+  .lang-container {
+      width: auto;
+      position: absolute;
+      top: 0;
+      right: 1rem;
+  }
+}
 </style>

@@ -21,6 +21,7 @@ import LanguageSelect from './components/LanguageSelect.vue';
 <style scoped>
 
 header {
+	position: relative;
 	line-height: 1.5;
 	max-height: 100vh;
 }
