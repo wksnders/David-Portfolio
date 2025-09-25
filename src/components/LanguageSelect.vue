@@ -6,7 +6,7 @@ const { ready, setManualLanguage, manualLang } = useLocalization()
 
 const languages = [
   { displayText: "English", languageCode: "en" },
-  { displayText: "한국인", languageCode: "ko" }
+  { displayText: "한국어", languageCode: "ko" }
 ]
 
 // bind current selection (start with manualLang or fallback)
