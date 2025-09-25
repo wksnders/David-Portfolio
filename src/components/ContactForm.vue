@@ -24,7 +24,7 @@ const formStatus = ref(null) // 'success' | 'error' | null
 const statusText = ref('')
 const isLoading = ref(false)
 
-const AJAX_ENDPOINT = 'https://formsubmit.co/ajax/a376f112288c4a0db1956198e8b8344a'
+const AJAX_ENDPOINT = 'https://formsubmit.co/ajax/f909b58db1cd027b448977d3b69bb4c1'
 
 async function handleSubmit(e) {
   e.preventDefault()
