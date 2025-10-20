@@ -11,26 +11,43 @@ const { getTranslationRef, ready } = useLocalization()
 // Pulling localized fields
 const locationLink = getTranslationRef(`${props.basePath}.locationLink`)
 const locationText = getTranslationRef(`${props.basePath}.locationText`)
-const textAfter = getTranslationRef(`${props.basePath}.textAfter`)
+const bodyText1 = getTranslationRef(`${props.basePath}.bodyText1`)
+const bodyLink1 = getTranslationRef(`${props.basePath}.bodyLink1`)
+const bodyLinkText1 = getTranslationRef(`${props.basePath}.bodyLinkText1`)
+const bodyText2 = getTranslationRef(`${props.basePath}.bodyText2`)
 </script>
 
 <template>
-  <div class="classroom-item">
+  <li class="classroom-item">
     <div v-if="!ready">Loading...</div>
     <p v-else>
       <!-- Render location as link if present -->
-      <template v-if="locationLink">
-        <RouterLink :to="locationLink">{{ locationText }}</RouterLink>
-      </template>
-      <template v-else>
-        {{ locationText }}
-      </template>
-      {{ textAfter }}
+      <strong class="bold">
+        <template v-if="locationLink">
+          <RouterLink :to="locationLink">{{ locationText }}</RouterLink>
+        </template>
+        <template v-else>
+          {{ locationText }}
+        </template>
+      </strong>
+      {{ bodyText1 }}
+      <a v-if="bodyLink1 && bodyLinkText1" :href="bodyLink1" target="_blank" rel="noopener noreferrer">
+        {{ bodyLinkText1 }}
+      </a>
+      {{ bodyText2 }}
     </p>
-  </div>
+  </li>
 </template>
 
 <style scoped>
+.classroom-item{
+  margin-left: 2rem;
+}
+
+.bold{
+  font-weight: 600;
+}
+
 .classroom-item p {
   margin: 0;
   line-height: 1.5;

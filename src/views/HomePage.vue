@@ -10,17 +10,9 @@ import OneOnOneItem from '../components/templates/OneOnOneItem.vue'
 import PublicRelationsItem from '../components/templates/PublicRelationsItem.vue'
 import SpeechesItem from '../components/templates/SpeechesItem.vue'
 import SubSurtitlesItem from '../components/templates/SubSurtitlesItem.vue'
+import Description from '../components/templates/Blank.vue'
 
 const sections = [
-  {
-    templateType: 'writing',
-    id: 'writing',
-    subsections: [
-      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
-      { name: 'Books', itemComponent: BooksItem, },
-      { name: 'Articles', itemComponent: ArticlesItem, },
-    ],
-  },
   {
     templateType: 'editing',
     id: 'editing',
@@ -32,9 +24,19 @@ const sections = [
     ],
   },
   {
+    templateType: 'writing',
+    id: 'writing',
+    subsections: [
+      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
+      { name: 'Books', itemComponent: BooksItem, },
+      { name: 'Articles', itemComponent: ArticlesItem, },
+    ],
+  },
+  {
     templateType: 'teaching',
     id: 'teaching',
     subsections: [
+      { name: 'Intro', itemComponent: Description, },
       { name: 'OneOnOne', itemComponent: OneOnOneItem, },
       { name: 'Classroom', itemComponent: ClassroomItem, },
     ],

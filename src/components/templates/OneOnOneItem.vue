@@ -15,19 +15,22 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
 </script>
 
 <template>
-  <div class="one-on-one-item">
+  <li class="one-on-one-item">
     <div v-if="!ready">Loading...</div>
     <p v-else>
       {{ student }}
-      <span v-if="testimonialText"> — "{{ testimonialText }}"</span>
       <template v-if="testimonialLink">
-        &nbsp;<RouterLink :to="testimonialLink">(link)</RouterLink>
+        &nbsp;<RouterLink :to="testimonialLink">{{ testimonialText }}</RouterLink>
       </template>
     </p>
-  </div>
+  </li>
 </template>
 
 <style scoped>
+.one-on-one-item{
+  margin-left: 2rem;
+}
+
 .one-on-one-item p {
   margin: 0;
   line-height: 1.5;

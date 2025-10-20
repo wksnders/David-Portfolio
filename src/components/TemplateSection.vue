@@ -28,13 +28,13 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
     >
       <div v-if="!ready">Loading...</div>
       <template v-else>
-        <h4>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h4>
-
         <p v-if="getTranslationRef(`Subsection.${props.templateType}.${subsection.name}.description`)">
+          <strong>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</strong>
           {{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}.description`) }}
         </p>
+        <h4 v-else>{{ getTranslationRef(`Subsection.${props.templateType}.${subsection.name}`) }}</h4>
 
-        <div class="entries">
+        <div v-if="prefixEntryCounts(`${props.templateType}.${subsection.name}.`)>0" class="entries">
           <component
             v-for="i in prefixEntryCounts(`${props.templateType}.${subsection.name}.`) "
             :key="i"
@@ -42,6 +42,7 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
             :base-path="`${props.templateType}.${subsection.name}.${i}`"
           />
         </div>
+        <div v-else class="shorten"></div>
       </template>
     </div>
   </section>
@@ -56,19 +57,22 @@ const sectionTitle = getTranslationRef(`Section.${props.templateType}`)
   gap: 0.5rem;
 }
 
-.subsection h4 {
-  margin-bottom: 0.25rem;
-  color: var(--color-soft-heading);
+.shorten{
+  margin-bottom: -1.25rem;
+}
+
+.subsection{
+  padding-bottom: .5rem;
 }
 
 .subsection p {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   color: var(--color-text);
 }
 
 .entries {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 </style>
