@@ -40,11 +40,12 @@ watch(() => route.hash, checkHighlight)
     :class="['testimonial-item', { highlighted: isHighlighted }]"
     :id="props.id"
   >
-    <h5 class="testimonial-person">{{ personName }}</h5>
-    <p class="testimonial-role">{{ role }}</p>
     <blockquote class="testimonial-quote">
       “{{ quote }}”
     </blockquote>
+    
+    <h5 class="testimonial-person">{{ personName }}</h5>
+    <p class="testimonial-role">{{ role }}</p>
   </div>
 </template>
 
@@ -62,12 +63,12 @@ watch(() => route.hash, checkHighlight)
 }
 
 .testimonial-person {
-  margin: 0;
+  margin: 0 0 0 3rem;
   font-weight: bold;
 }
 
 .testimonial-role {
-  margin: 0 0 0.25rem;
+  margin: 0 0 .25rem 3rem;
   font-style: italic;
   color: var(--color-soft-heading);
 }
