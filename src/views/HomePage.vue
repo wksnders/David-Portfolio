@@ -41,11 +41,14 @@ const sections = [
   },
 ]
 </script>
-
 <template>
   <main class="main-content">
     <div class="main-column">
       <IntroductionImages />
+
+      <aside class="about-column mobile-inline">
+        <About />
+      </aside>
 
       <TemplateSection
         v-for="(section, index) in sections"
@@ -56,7 +59,7 @@ const sections = [
       />
     </div>
 
-    <aside class="about-column">
+    <aside class="about-column desktop-only">
       <About />
     </aside>
   </main>
@@ -86,12 +89,29 @@ const sections = [
     width: 300px;
     flex-shrink: 0;
   }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-inline {
+    display: none;
+  }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 999px) {
   .main-column,
   .about-column {
     width: 100%;
+  }
+
+  .mobile-inline {
+    display: block;
+    order: 2;
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
 </style>
