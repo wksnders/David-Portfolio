@@ -14,8 +14,8 @@ const navContact = getTranslationRef('navigation.contact')
 <template>
     <nav v-if="ready">
       <RouterLink to="/#about">{{ navAbout }}</RouterLink>
-      <RouterLink to="/#writing">{{ navWriting }}</RouterLink>
       <RouterLink to="/#editing">{{ navEditing }}</RouterLink>
+      <RouterLink to="/#writing">{{ navWriting }}</RouterLink>
       <RouterLink to="/#teaching">{{ navTeaching }}</RouterLink>
       <RouterLink to="/contact-me">{{ navContact }}</RouterLink>
     </nav>
