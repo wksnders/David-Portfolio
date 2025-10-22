@@ -23,7 +23,7 @@ const navTestimonials = getTranslationRef('navigation.testimonials')
 
 <style scoped>
 .about-me {
-  padding: 1.5rem;
+  padding: 1rem;
   color: var(--color-text);
 }
 
