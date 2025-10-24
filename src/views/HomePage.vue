@@ -17,10 +17,10 @@ const sections = [
     templateType: 'editing',
     id: 'editing',
     subsections: [
-      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
-      { name: 'Books', itemComponent: BooksItem, },
       { name: 'Speeches', itemComponent: SpeechesItem, },
+      { name: 'Books', itemComponent: BooksItem, },
       { name: 'Sub-Surtitles', itemComponent: SubSurtitlesItem, },
+      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
     ],
   },
   {
