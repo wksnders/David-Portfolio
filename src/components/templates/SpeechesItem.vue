@@ -12,6 +12,9 @@ const { getTranslationRef, ready } = useLocalization()
 const title = getTranslationRef(`${props.basePath}.title`)
 const titleLink = getTranslationRef(`${props.basePath}.titleLink`)
 const additionalText = getTranslationRef(`${props.basePath}.additionalText`)
+
+const testimonialLabel = getTranslationRef(`${props.basePath}.TestimonialLabel`)
+const testimonialLink = getTranslationRef(`${props.basePath}.TestimonialLink`)
 </script>
 
 <template>
@@ -25,7 +28,10 @@ const additionalText = getTranslationRef(`${props.basePath}.additionalText`)
       <template v-else>
         {{ title }}
       </template>
-      <span v-if="additionalText"> — {{ additionalText }}</span>
+      <span v-if="additionalText"> — {{ additionalText }} </span>
+      <RouterLink v-if="testimonialLink" :to="testimonialLink">
+        {{ testimonialLabel || 'Testimonial' }}
+      </RouterLink>
     </p>
   </div>
 </template>
