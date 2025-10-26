@@ -12,7 +12,6 @@ const { getTranslationRef, ready } = useLocalization()
 const title = getTranslationRef(`${props.basePath}.title`)
 const titleLink = getTranslationRef(`${props.basePath}.titleLink`)
 const additionalText = getTranslationRef(`${props.basePath}.additionalText`)
-const testimonialText = getTranslationRef(`${props.basePath}.testimonialText`)
 const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
 const testimonialLinkLabel = getTranslationRef(`${props.basePath}.testimonialLinkLabel`)
 </script>
