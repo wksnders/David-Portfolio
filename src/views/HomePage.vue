@@ -18,9 +18,9 @@ const sections = [
     id: 'editing',
     subsections: [
       { name: 'Speeches', itemComponent: SpeechesItem, },
+      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
       { name: 'Books', itemComponent: BooksItem, },
       { name: 'Sub-Surtitles', itemComponent: SubSurtitlesItem, },
-      { name: 'PublicRelations', itemComponent: PublicRelationsItem, },
     ],
   },
   {
