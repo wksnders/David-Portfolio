@@ -7,6 +7,7 @@
 
 :root {
 	--white-peachy: #f2f0ea;
+  --grey:#E7E5E6;
   --green-blue: #023e47;
   --teal: #045660;
   --tan:#7a5e2f;
@@ -18,9 +19,9 @@
 }
 /* semantic color variables for this project */
 :root {
-	--color-background: var(--white-peachy);
-	--color-background-heading: var(--white-peachy);
-  --color-background-accent:var(--white-peachy);
+	--color-background: var(--grey);
+	--color-background-heading: var(--grey);
+  --color-background-accent:var(--grey);
 
 	--color-border: var(--divider-light-2);
 	--color-border-hover: var(--divider-light-1);
