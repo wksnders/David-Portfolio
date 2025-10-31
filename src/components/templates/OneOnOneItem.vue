@@ -20,7 +20,7 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
     <p v-else>
       {{ student }}
       <template v-if="testimonialLink">
-        &nbsp;<RouterLink :to="testimonialLink">{{ testimonialText }}</RouterLink>
+        <RouterLink class="testimonial-link" :to="testimonialLink">{{ testimonialText }}</RouterLink>
       </template>
     </p>
   </li>
@@ -36,8 +36,4 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
   line-height: 1.5;
 }
 
-.one-on-one-item a {
-  color: var(--color-hyperlink);
-  text-decoration: underline;
-}
 </style>

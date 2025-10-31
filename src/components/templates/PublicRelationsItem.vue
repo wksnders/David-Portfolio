@@ -42,7 +42,7 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
       </p>
 
       <p v-if="testimonialLink" class="testimonial">
-        <RouterLink :to="testimonialLink">
+        <RouterLink :to="testimonialLink" class="testimonial-link">
           {{ testimonialLabel || 'Testimonials' }}
         </RouterLink>
       </p>
@@ -67,9 +67,8 @@ const testimonialLink = getTranslationRef(`${props.basePath}.testimonialLink`)
 .pr-item .testimonial {
   margin-top: 0.5rem;
 }
-
-.pr-item a {
-  color: var(--color-hyperlink);
-  text-decoration: underline;
+.testimonial-link{
+  padding: 0;
 }
+
 </style>

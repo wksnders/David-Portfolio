@@ -29,18 +29,15 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
           {{ bookTitle }}
         </a>
         <em v-else>{{ bookTitle }}</em>
+        <span v-if="additionalText">{{ additionalText }}</span>
+        <RouterLink v-if="testimonialLink" :to="testimonialLink" class="testimonial-link">
+          {{ testimonialLabel || 'Testimonial' }}
+        </RouterLink>
       </p>
 
       <!-- Extra info (translator, co-writer, etc.) -->
-      <p v-if="additionalText" class="book-extra">
-        {{ additionalText }}
-      </p>
-
-      <!-- Testimonial link -->
-      <p v-if="testimonialLink" class="book-testimonial">
-        <RouterLink :to="testimonialLink">
-          {{ testimonialLabel || 'Testimonial' }}
-        </RouterLink>
+      <p v-if="additionalText || testimonialLink" class="book-extra">
+        
       </p>
 
       <!-- Subtext (small notes) -->
@@ -57,7 +54,6 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
 }
 
 .book-title {
-  font-weight: bold;
   margin: 0;
 }
 
@@ -68,7 +64,6 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
 
 .book-extra {
   margin: 0.25rem 0;
-  font-style: italic;
   color: var(--color-subtext, #555);
 }
 
@@ -82,8 +77,4 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
   margin: 0.25rem 0 0;
 }
 
-.book-item a {
-  color: var(--color-hyperlink);
-  text-decoration: underline;
-}
 </style>

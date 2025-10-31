@@ -16,7 +16,7 @@ const navTestimonials = getTranslationRef('navigation.testimonials')
     <p>{{ bodyText2 }}</p>
     <p>{{ bodyText3 }}</p>
     <nav class="navigation">
-      <RouterLink to="/testimonials">{{ navTestimonials }}</RouterLink>
+      <RouterLink to="/testimonials" class="testimonial-link">{{ navTestimonials }}</RouterLink>
     </nav>
   </section>
 </template>

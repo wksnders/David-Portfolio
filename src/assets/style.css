@@ -8,6 +8,7 @@
 :root {
 	--white-peachy: #f2f0ea;
   --grey:#E7E5E6;
+  --hyperlink-blue:#0563C1;
   --green-blue: #023e47;
   --teal: #045660;
   --tan:#7a5e2f;
@@ -31,7 +32,8 @@
 	--color-heading: var(--green-blue);
   --color-soft-heading: var(--teal);
 	--color-text: var(--green-blue);
-	--color-hyperlink: var(--tan);
+	--color-hyperlink: var(--hyperlink-blue);
+	--color-testimonial-link: var(--tan);
   --color-text-accent:var(--green-blue);
   --color-text-accent-active:var(--green-blue);
 }
@@ -123,9 +125,14 @@ ol {
 }
 
 a{
-	text-decoration: none;
 	color: var(--color-hyperlink);
 	transition: 0.4s;
+}
+
+.testimonial-link{
+  color: var(--color-testimonial-link);
+  font-size: 12px;
+  padding-left: .5rem;
 }
 
 strong{
@@ -150,6 +157,10 @@ article{
 	  font-size: 17px;
 	  line-height: 26px;
   }
+  .testimonial-link{
+    font-size: 16px;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -159,6 +170,9 @@ article{
   }
   .main-content{
     padding: 0 10%;
+  }
+  .testimonial-link{
+    font-size: 18px;
   }
 }
 

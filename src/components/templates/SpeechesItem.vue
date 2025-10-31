@@ -29,7 +29,7 @@ const testimonialLink = getTranslationRef(`${props.basePath}.TestimonialLink`)
         {{ title }}
       </template>
       <span v-if="additionalText"> — {{ additionalText }} </span>
-      <RouterLink v-if="testimonialLink" :to="testimonialLink">
+      <RouterLink v-if="testimonialLink" :to="testimonialLink" class="testimonial-link">
         {{ testimonialLabel || 'Testimonial' }}
       </RouterLink>
     </p>
