@@ -192,10 +192,10 @@ teaching.OneOnOne.3.student: "Ministry of Culture, Sports and Tourism officials 
 teaching.OneOnOne.3.testimonialText: ""
 teaching.OneOnOne.3.testimonialLink: ""
 teaching.OneOnOne.4.student: "Legal professional (international seminar preparation)"
-teaching.OneOnOne.4.testimonialText: "testimonial"
+teaching.OneOnOne.4.testimonialText: "Testimonial"
 teaching.OneOnOne.4.testimonialLink: "./testimonials#testimonial-4"
 teaching.OneOnOne.5.student: "Healthcare professional (IELTS preparation)"
-teaching.OneOnOne.5.testimonialText: "testimonial"
+teaching.OneOnOne.5.testimonialText: "Testimonial"
 teaching.OneOnOne.5.testimonialLink: "./testimonials#testimonial-5"
 
 Subsection.teaching.Classroom: "Classroom Instruction "
