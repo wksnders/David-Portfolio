@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import useLocalization from '../composables/useLocalization'
 
 const { ready, setManualLanguage, manualLang } = useLocalization()
@@ -15,6 +15,16 @@ const selectedLang = ref(manualLang.value || languages[0].languageCode)
 // watch for changes and apply manual override
 watch(selectedLang, (newLang) => {
   setManualLanguage(newLang)
+})
+
+onMounted(() => {
+  const browserLang = navigator.language.split('-')[0]
+  const activeLang = manualLang.value || browserLang
+
+  if (selectedLang.value !== activeLang) {
+    selectedLang.value = activeLang
+    setManualLanguage(activeLang)
+  }
 })
 </script>
 
