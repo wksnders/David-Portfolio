@@ -72,7 +72,7 @@ editing.Books.2.Title: "2010 White Paper"
 editing.Books.2.Link: "https://link.springer.com/book/10.1007/978-3-7908-2753-8"
 editing.Books.2.AdditionalText: "(대한민국 국방부, 2011)"
 editing.Books.2.TestimonialLabel: "추천사"
-editing.Books.2.TestimonialLink: "데이빗 캔들 선생님과는 지난 15여년간 동료로서 상호 협업을 추진해 왔습니다. 국방부의 국방백서 프로젝트에서부터 문화, 예술, 환경, 인권 등 다양한 분야를 번역하면서 단 한 번도 빠짐없이 훌륭한 피드백을 받을 수 있었던 데에는 데이빗 선생님의 큰 공이 있었다고 생각합니다. 이미 부정적인 피드백을 받았던 타인의 작업물도 데이빗과의 협업을 통해 처음부터 다시 시작하면서 결국 클라이언트가 만족한 결과물을 도출하기도 했습니다. 저희가 함께 협업을 할 때는 원문의 뉘앙스를 가장 가까이 담으면서도 영어적으로 어색한 문장이 되지 않도록 하는데 특히 많은 노력을 기울입니다."
+editing.Books.2.TestimonialLink: "./testimonials#testimonial-2"
 editing.Books.2.Subtext: ""
 
 Subsection.editing.Sub-Surtitles: "자막 및 수퍼타이틀"

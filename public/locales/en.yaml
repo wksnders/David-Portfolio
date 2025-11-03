@@ -72,9 +72,7 @@ editing.Books.2.Title: "2010 White Paper "
 editing.Books.2.Link: "https://link.springer.com/book/10.1007/978-3-7908-2753-8"
 editing.Books.2.AdditionalText: "(Ministry of National Defense, Republic of Korea, 2011)"
 editing.Books.2.TestimonialLabel: "Testimonial"
-editing.Books.2.TestimonialLink: "I’ve had the pleasure of working with Mr. David Kendall as a colleague and collaborator for over fifteen years. From the Ministry of National Defense’s Defense White Paper project to translations in diverse fields such as culture, arts, environment, and human rights, his contribution has been instrumental in ensuring that our work consistently received outstanding feedback.
-In fact, there were cases where translations originally done by another translation team—which had received negative feedback—were completely reworked by David and me from scratch, eventually resulting in deliverables that fully satisfied the client. When we work together, we devote particular effort to preserving the nuances of the original text while maintaining natural and idiomatic English expression.
-"
+editing.Books.2.TestimonialLink: "./testimonials#testimonial-2"
 editing.Books.2.Subtext: ""
 
 Subsection.editing.Sub-Surtitles: "Sub/Surtitles"
@@ -233,9 +231,7 @@ testimonials.1.role: "Former Lead Korean-English Translator, Global News Analysi
 testimonials.1.quote: "I had the privilege of overseeing David’s work with the Ministry of Culture, Sports and Tourism. Responsible for presidential speeches and press releases from the Office of the President under intense pressure, he consistently delivered flawless results, whether day or night. He approached editing with a broad perspective, offering thoughtful and satisfying solutions, and treated every assignment with genuine care as if it were his own."
 testimonials.2.personName: "Rosa Jiyoung Park"
 testimonials.2.role: "Conference Interpreter & Freelance Translator - since 2003"
-testimonials.2.quote: "I’ve had the pleasure of working with Mr. David Kendall as a colleague and collaborator for over fifteen years. From the Ministry of National Defense’s Defense White Paper project to translations in diverse fields such as culture, arts, environment, and human rights, his contribution has been instrumental in ensuring that our work consistently received outstanding feedback.
-In fact, there were cases where translations originally done by another translation team—which had received negative feedback—were completely reworked by David and me from scratch, eventually resulting in deliverables that fully satisfied the client. When we work together, we devote particular effort to preserving the nuances of the original text while maintaining natural and idiomatic English expression.
-"
+testimonials.2.quote: "I’ve had the pleasure of working with Mr. David Kendall as a colleague and collaborator for over fifteen years. From the Ministry of National Defense’s Defense White Paper project to translations in diverse fields such as culture, arts, environment, and human rights, his contribution has been instrumental in ensuring that our work consistently received outstanding feedback. In fact, there were cases where translations originally done by another translation team—which had received negative feedback—were completely reworked by David and me from scratch, eventually resulting in deliverables that fully satisfied the client. When we work together, we devote particular effort to preserving the nuances of the original text while maintaining natural and idiomatic English expression."
 testimonials.3.personName: "Timothy Dickens"
 testimonials.3.role: "Foreign Attorney (UK & South Africa), D&A, Seoul"
 testimonials.3.quote: "David was an invaluable colleague on our Africa practice, where he played a key role in research and strategic support. He was instrumental in developing our South Africa investment booklet — later adopted by the South African Embassy for official use — and his research went a long way toward helping establish our Africa group on a firm footing. His analytical rigor, reliability, and ability to translate complex market insights into accessible materials made a lasting contribution to our work."
