@@ -20,7 +20,8 @@ const testimonialLinkLabel = getTranslationRef(`${props.basePath}.testimonialLin
   <div v-if="ready" class="article-item">
     <p>
         <q>
-            <a  v-if="titleLink" :href="titleLink" target="_blank" rel="noopener noreferrer">
+            <a  v-if="titleLink" :href="titleLink" target="_blank" rel="noopener noreferrer"
+          :download="titleLink.endsWith('.pdf') ? '' : null">
               {{ title }}
             </a>
             <span v-else>{{ title }}</span>

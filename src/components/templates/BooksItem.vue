@@ -25,9 +25,16 @@ const subtext = getTranslationRef(`${props.basePath}.Subtext`)
     <div v-else>
       <!-- Title -->
       <p class="book-title">
-        <a v-if="bookLink" :href="bookLink" target="_blank" rel="noopener noreferrer">
+        <a
+          v-if="bookLink"
+          :href="bookLink"
+          :download="bookLink.endsWith('.pdf') ? '' : null"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {{ bookTitle }}
         </a>
+
         <em v-else>{{ bookTitle }}</em>
         <span v-if="additionalText">{{ additionalText }}</span>
         <RouterLink v-if="testimonialLink" :to="testimonialLink" class="testimonial-link">
