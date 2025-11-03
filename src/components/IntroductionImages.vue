@@ -1,7 +1,7 @@
 <template>
   <section class="image-section">
     <div class="image-wrapper">
-      <img src="/images/DavidImage1.JPG" alt="Image of David" />
+      <img src="/images/David1.JPG" alt="Image of David" />
     </div>
     <div class="image-wrapper second-image">
       <img src="/images/David2.PNG" alt="Image of David" />
