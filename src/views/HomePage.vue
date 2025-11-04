@@ -46,7 +46,7 @@ const sections = [
 <template>
   <main class="main-content">
     <div class="main-column">
-      <IntroductionImages />
+      <IntroductionImages  id="about" />
 
       <aside class="about-column mobile-inline">
         <About />

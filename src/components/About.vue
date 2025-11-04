@@ -10,7 +10,7 @@ const navTestimonials = getTranslationRef('navigation.testimonials')
 </script>
 
 <template>
-  <section class="about-me" id="about">
+  <section class="about-me">
     <h1>{{ headerText }}</h1>
     <p>{{ bodyText1 }}</p>
     <p>{{ bodyText2 }}</p>
