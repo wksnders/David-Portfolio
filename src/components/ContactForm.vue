@@ -24,55 +24,49 @@ const formStatus = ref(null) // 'success' | 'error' | null
 const statusText = ref('')
 const isLoading = ref(false)
 
-const AJAX_ENDPOINT = 'https://formsubmit.io/ajax/f909b58db1cd027b448977d3b69bb4c1'
+const GOOGLE_FORM_ENDPOINT = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScrNhYpeNq8VZpHwvsMr7n3ELs-0RbfeCpjE-BM1OwzCbURzg/formResponse'
 
 async function handleSubmit(e) {
-  e.preventDefault()
-  const form = e.target
-  const formData = new FormData(form)
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
 
-  const urlEncoded = new URLSearchParams()
+  const urlEncoded = new URLSearchParams();
   for (const [key, value] of formData.entries()) {
-    urlEncoded.append(key, value)
+    urlEncoded.append(key, value);
   }
 
-  isLoading.value = true
-  formStatus.value = null
-  statusText.value = ''
+  isLoading.value = true;
+  formStatus.value = null;
+  statusText.value = '';
 
   try {
-    const res = await fetch(AJAX_ENDPOINT, {
+    // Google Forms responds with 200 even on errors
+    await fetch(GOOGLE_FORM_ENDPOINT, {
       method: 'POST',
+      mode: 'no-cors', // IMPORTANT for Google
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
       },
-      body: urlEncoded.toString()
-    })
+      body: urlEncoded.toString(),
+    });
 
-    const data = await res.json().catch(() => null)
+    // Treat no-cors success as a success
+    form.reset();
+    formStatus.value = 'success';
+    statusText.value = successMessage.value;
 
-    if (res.ok && data?.success === "true") {
-      form.reset()
-      formStatus.value = 'success'
-      statusText.value = successMessage.value
-    } else {
-      formStatus.value = 'error'
-      statusText.value = errorMessage.value
-    }
   } catch (err) {
-    console.error(err)
-    formStatus.value = 'error'
-    statusText.value = errorMessage.value
+    console.error(err);
+    formStatus.value = 'error';
+    statusText.value = errorMessage.value;
   } finally {
-    isLoading.value = false
-    // auto-hide after 5 seconds
-    if (formStatus.value) {
-      setTimeout(() => {
-        formStatus.value = null
-        statusText.value = ''
-      }, 5000)
-    }
+    isLoading.value = false;
+
+    setTimeout(() => {
+      formStatus.value = null;
+      statusText.value = '';
+    }, 5000);
   }
 }
 </script>
@@ -84,17 +78,17 @@ async function handleSubmit(e) {
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
         <label for="name">{{ nameLabel }}</label>
-        <input id="name" type="text" name="name" :placeholder="namePlaceholder" required />
+        <input id="name" type="text" name="entry.111088163" :placeholder="namePlaceholder" required />
       </div>
 
       <div class="form-group">
         <label for="email">{{ emailLabel }}</label>
-        <input id="email" name="email" type="email" :placeholder="emailPlaceholder" required />
+        <input id="email" name="entry.1696685616" type="email" :placeholder="emailPlaceholder" required />
       </div>
 
       <div class="form-group">
         <label for="subject">{{ subjectLabel }}</label>
-        <input id="subject" name="_subject" type="text" :placeholder="subjectPlaceholder" required />
+        <input id="subject" name="entry.588850040" type="text" :placeholder="subjectPlaceholder" required />
       </div>
 
       <div class="form-group">
@@ -103,14 +97,10 @@ async function handleSubmit(e) {
           id="message"
           rows="5"
           :placeholder="messagePlaceholder"
-          name="message"
+          name="entry.2076534474"
           required
         ></textarea>
       </div>
-
-      <input type="text" name="_honey" style="display:none" />
-      <input type="hidden" name="_url" style="display:none" value="https://davidlkendall.com/#/contact-me">
-
       <button type="submit" :disabled="isLoading">
         {{ isLoading ? sendingMessage : submitLabel }}
       </button>
